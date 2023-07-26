@@ -1,0 +1,28 @@
+server:
+  port: 80
+  servlet:
+    context-path: /guestbook   
+    #http://localhost/guestbook2/deptall
+    #주소 url에서 localhost 뒷 부분을 context-path 라고 한다~
+    #http://localhost/context-path/deptall
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver 
+    password: rootroot
+##  url: jdbc:mysql://mysqldb:3306/fisa?characterEncoding=UTF-8 (230724 수업에 사용)
+##    url: jdbc:mysql://localhost/fisa?characterEncoding=UTF-8
+## 230725    url: jdbc:mysql://user08-mysql.csshl99oapfn.ap-northeast-1.rds.amazonaws.com:3306/fisa?characterEncoding=UTF-8
+    url: jdbc:mysql://user20-mysql.cnqwxpaw1dij.ap-northeast-2.rds.amazonaws.com:3306/fisa?characterEncoding=UTF-8
+    username: root
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none  #DDL = CREATE, ALTER, DROP, TRUNCATE
+    show-sql: true 
+  mvc:
+    view:
+      prefix: /WEB-INF/  #불변
+      suffix: .jsp
